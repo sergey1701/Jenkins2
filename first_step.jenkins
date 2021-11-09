@@ -1,0 +1,24 @@
+#!groovy
+
+// Cheak JenkinsWorker properties
+
+
+properties([disableConcurrentBuilds()])
+
+pipline{
+    agent{
+        label 'master'
+    }
+    options{
+        buildDiscarder(logRotator(numToKeepStr '10', artifactNumToKeepStr: '10'))
+        timestaps()
+    }
+    stages{
+        stage("First Stage")
+        {
+            steps{
+            sh 'ssh ubuntu@3.145.45.60' \'hostname\''
+            }
+        }
+    }
+}
