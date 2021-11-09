@@ -17,7 +17,7 @@ pipline{
         stage("First Stage")
         {
             steps{
-            sh 'ssh ubuntu@3.145.45.60' \'hostname\''
+            sh 'ssh ubuntu@3.145.45.60 \'hostname\''
             }
         }
     }
