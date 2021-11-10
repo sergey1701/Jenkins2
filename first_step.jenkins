@@ -1,14 +1,5 @@
-#!groovy
-
-// Cheak JenkinsWorker properties
-
-
-//properties([disableConcurrentBuilds()])
-
 pipline{
-    agent{
-        label 'master'
-    }
+    agent any
     options{
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestaps()
