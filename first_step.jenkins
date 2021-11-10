@@ -3,7 +3,7 @@
 // Cheak JenkinsWorker properties
 
 
-properties([disableConcurrentBuilds()])
+//properties([disableConcurrentBuilds()])
 
 pipline{
     agent{
