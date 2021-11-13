@@ -1,23 +1,10 @@
-#!groovy
-
-// Cheak JenkinsWorker properties
-
-
-properties([disableConcurrentBuilds()])
-
-pipeline{
-    agent any
-    options{
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
-    }
-    
-    stages{
-        stage
-        {
-            steps{
-                sh'ssh ubuntu@3.141.27.96'
+pipeline {
+    agent any 
+    stages {
+        stage('Stage 1') {
+            steps {
+                ssh ubuntu@3.141.27.96 
             }
         }
     }
-}        
+}
