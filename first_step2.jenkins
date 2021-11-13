@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-               sh "echo pwd" 
                sh 'ssh -t -t ubuntu@3.141.27.96 -o StrictHostKeyChecking=no'
-               sh "echo pwd"
+               sh 'sudo apt update'
             }
         }
     }
