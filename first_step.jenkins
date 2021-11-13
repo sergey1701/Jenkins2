@@ -21,7 +21,7 @@ pipeline{
         {
             steps{
             echo "=========================statr build image======================"
-            dir ('docker/toolbox')
+            dir ('docker/django_nginx')
             {
                 sh'docker build .'
             }
