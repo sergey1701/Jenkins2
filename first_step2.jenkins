@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                sh """ssh -tt login@host << EOF
+                sh """ssh -tt ubuntu@3.141.27.96 << EOF
                 sudo apt upgarde
                 exit
                 EOF"""
