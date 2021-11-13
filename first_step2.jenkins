@@ -4,7 +4,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 sh """ssh -tt ubuntu@3.141.27.96 << EOF
-                sudo apt update
+                sudo apt-get update
                 exit
                 EOF"""
             }
@@ -13,7 +13,11 @@ pipeline {
         stage('Stage 2') {
             steps {
                 sh """ssh -tt ubuntu@3.141.27.96 << EOF
-                sudo apt -y upgrade
+                sudo apt-get -y install \
+                ca-certificates \
+                curl \
+                gnupg \
+                lsb-release
                 exit
                 EOF"""
             }
