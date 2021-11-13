@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-               sh 'ssh ubuntu@3.141.27.96 \
-               & echo "Hello World!!!" \
-               & sudo apt update' 
+               sh "echo pwd" 
+               sh 'ssh -t -t ubuntu@3.141.27.96 -o StrictHostKeyChecking=no'
+               sh "echo pwd"
             }
         }
     }
