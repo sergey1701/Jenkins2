@@ -4,7 +4,8 @@ pipeline {
         stage('Stage 1') {
             steps {
                sh 'ssh ubuntu@3.141.27.96 \
-               && echo "Hello World!!!"' 
+               && echo "Hello World!!!" \
+               && sudo apt update' 
             }
         }
     }
