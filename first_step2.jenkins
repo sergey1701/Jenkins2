@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                ssh ubuntu@3.141.27.96 
+               sh 'ssh ubuntu@3.141.27.96' 
             }
         }
     }
