@@ -8,13 +8,14 @@ pipeline {
                 exit
                 EOF"""
             }
-            stage('Stage 2') {
+            
+        }
+        stage('Stage 1') {
             steps {
                 sh """ssh -tt ubuntu@3.141.27.96 << EOF
                 sudo apt upgrade
                 exit
                 EOF"""
             }
-        }
     }
 }
