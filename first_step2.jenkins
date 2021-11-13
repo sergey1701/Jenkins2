@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh """ssh -tt ubuntu@3.141.27.96 << EOF
                 sudo apt upgrade
-                yes
+                echo "yes"
                 exit
                 EOF"""
             }
