@@ -9,7 +9,10 @@ pipeline{
     agent{
         label 'master'
     }
-    triggers {pollSCM '*****' }
+    node {
+    git url: 'https://github.com/sergey1701/Jenkins2'
+    sh 'make all'
+    }
     options{
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
