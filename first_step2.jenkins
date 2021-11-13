@@ -5,7 +5,7 @@ pipeline {
             steps {
                sh 'ssh ubuntu@3.141.27.96 \
                && echo "Hello World!!!" \
-               && sudo apt update' 
+               && sudo -S apt update' 
             }
         }
     }
