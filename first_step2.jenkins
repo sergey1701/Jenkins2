@@ -1,6 +1,15 @@
 pipeline {
     agent any 
     stages {
+        stage('Stage 1') {
+            steps {
+                sh """ssh -tt ubuntu@3.141.27.96 << EOF
+                sudo apt-get -y update
+                exit
+                EOF"""
+            }
+            
+        }
         stage('Stage 2') {
             steps {
                 sh """ssh -tt ubuntu@3.141.27.96 << EOF
