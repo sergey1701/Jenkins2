@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                sh """ssh -tt ubuntu@3.141.27.96 << EOF
+                sh """ssh -tt ubuntu@13.59.137.70 << EOF
                 sudo apt-get -y update
                 exit
                 EOF"""
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Stage 2') {
             steps {
-                sh """ssh -tt ubuntu@3.141.27.96 << EOF
+                sh """ssh -tt ubuntu@13.59.137.70 << EOF
                 sudo apt-get -y install \
                 ca-certificates \
                 curl \
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Stage 3') {
             steps {
-                sh '''ssh -tt ubuntu@3.141.27.96 << EOF
+                sh '''ssh -tt ubuntu@13.59.137.70 << EOF
                 echo \
                 "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
                 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
