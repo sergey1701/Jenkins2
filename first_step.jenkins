@@ -16,14 +16,6 @@ pipeline{
     }
     
     stages{
-        stage("Install Docker")
-        {
-           steps
-           {
-               echo "=========================statr docker installation======================"
-               sh'sudo apt install -y docker docker-compose'
-           } 
-        }
         stage("Create Docker Image")
         {
             steps{
