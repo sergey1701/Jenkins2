@@ -22,7 +22,7 @@ pipeline{
             echo "=========================statr build image======================"
             dir ('docker/toolbox')
             {
-                sh'sudo docker build Dockerfile.django'
+                sh'docker build Dockerfile.django'
                                   
             }
             }
