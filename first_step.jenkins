@@ -16,17 +16,22 @@ pipeline{
     }
     
     stages{
+        stage("Install Docker")
+        {
+           steps
+           {
+               echo "=========================statr docker installation======================"
+               apt install -y docker docker-compose
+           } 
+        }
         stage("Create Docker Image")
         {
             steps{
             echo "=========================statr build image======================"
             dir ('docker/toolbox')
             {
-                sh """ssh -tt ubuntu@13.59.137.70 << EOF 
                 docker build Dockerfile.django
-                exit
-                EOF"""
-                   
+                                  
             }
             }
             }
