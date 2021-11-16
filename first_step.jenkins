@@ -21,7 +21,7 @@ pipeline{
            steps
            {
                echo "=========================statr docker installation======================"
-               sh'apt install -y docker docker-compose'
+               sh'sudo apt install -y docker docker-compose'
            } 
         }
         stage("Create Docker Image")
@@ -30,7 +30,7 @@ pipeline{
             echo "=========================statr build image======================"
             dir ('docker/toolbox')
             {
-                sh'docker build Dockerfile.django'
+                sh'sudo docker build Dockerfile.django'
                                   
             }
             }
