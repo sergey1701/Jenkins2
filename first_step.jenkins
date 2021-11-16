@@ -22,8 +22,10 @@ pipeline{
             echo "=========================statr build image======================"
             dir ('docker/toolbox')
             {
+                script{
                 sshagent(credentials : ['.ssh/id_rsa']){
                 sh'docker build Dockerfile.django'
+                }    
             }
             }
             }
