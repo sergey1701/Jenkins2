@@ -16,6 +16,13 @@ pipeline{
     }
     
     stages{
+        stage("requirements.txt")
+        {
+            steps
+            {
+                echo "pandas" >> requirements.txt
+            }
+        }
         stage("Create Docker Image")
         {
             steps{
