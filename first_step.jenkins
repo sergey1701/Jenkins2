@@ -19,11 +19,20 @@ pipeline{
             echo "=========================statr build image======================"
             dir ('docker/compose')
             {
+                sh'docker stop $(docker ps)'
+                sh'docker container prune'
                 sh'docker-compose up -d'
                                   
             }
             }
+        }
+        stage("End Of Process")
+        {
+            steps
+            {
+                echo "End"
             }
         }
     }
+}
 
