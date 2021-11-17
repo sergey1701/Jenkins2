@@ -20,7 +20,8 @@ pipeline{
         {
             steps
             {
-                echo "pandas" >> requirements.txt
+                sh'touch requirements.txt'
+                sh'echo "pandas" >> requirements.txt'
             }
         }
         stage("Create Docker Image")
