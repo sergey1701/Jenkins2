@@ -7,30 +7,19 @@ properties([disableConcurrentBuilds()])
 
 pipeline{
     agent any
-    triggers {
-        pollSCM 'H/10 * * * *'
-    }
     options{
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
     
     stages{
-        stage("requirements.txt")
-        {
-            steps
-            {
-                sh'touch requirements.txt'
-                sh'echo "pandas" >> requirements.txt'
-            }
-        }
         stage("Create Docker Image")
         {
             steps{
             echo "=========================statr build image======================"
-            dir ('docker/toolbox')
+            dir ('docker/compose')
             {
-                sh'docker build .'
+                sh'docker-compose up'
                                   
             }
             }
